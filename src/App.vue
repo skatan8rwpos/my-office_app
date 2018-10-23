@@ -2,7 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/about">Poop</router-link> | 
+      <button @click="die">die</button>
     </div>
     <router-view/>
   </div>
@@ -13,8 +15,8 @@ import { ipcRenderer } from 'electron'
 
 export default {
   name: 'app',
-  mounted() {
-    ipcRenderer.on('updaterMsg')
+  methods: {
+    die: () => {alert('die')}
   }
 }
 </script>
