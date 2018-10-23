@@ -54,6 +54,7 @@ function createWindow () {
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('myOffice')
+    win.webContents.openDevTools()
     // Load the index.html when not in development
     win.loadFile('index.html')
   }
