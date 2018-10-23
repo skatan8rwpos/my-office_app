@@ -1,6 +1,6 @@
 {
   "name": "my-office",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha",
   "description": "A very simple electron app",
   "private": true,
   "scripts": {
