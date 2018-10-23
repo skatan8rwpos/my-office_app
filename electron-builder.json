@@ -1,0 +1,28 @@
+{
+  "appId": "gr.coolLaboratory.myOffice",
+  "productName": "myOffice",
+  "copyright": "Copyright © 2018 coolLaboratory",
+  "directories": {
+    "output": "build"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/*",
+    "build/icons/icon.*"
+  ],
+  "dmg": {
+    "contents": [
+      { "x": 410, "y": 150, "type": "link", "path": "/Applications" },
+      { "x": 130, "y": 150, "type": "file" }
+    ]
+  },
+  "mac": { "icon": "build/icons/icon.icns" },
+  "win": {
+    "icon": "build/icons/icon.ico",
+    "target": [ { "target": "nsis", "arch": [  "x64", "ia32" ] } ],
+    "certificateFile": "coolLaboratory.pfx",
+    "legalTrademarks": "Copyright (c) 2018 coolLaboratory",
+    "publish": [ { "provider": "github",  "owner": "skatan8rwpos", "releaseType": "draft" } ]
+  },
+  "linux": { "icon": "build/icons" }
+}
