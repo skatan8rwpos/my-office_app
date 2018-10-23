@@ -116,12 +116,12 @@ autoUpdater.on('update-not-available', (info) => {
 autoUpdater.on('error', (err) => {
   sendStatusToWindow('update-error' + err);
 })
-autoUpdater.on('download-progress', (progressObj) => {
-  let log_message = "Download speed: " + progressObj.bytesPerSecond;
-  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+autoUpdater.on('download-progress', (ProgressInfo) => {
+  let log_message = "Download speed: " + ProgressInfo.bytesPerSecond;
+  log_message = log_message + ' - Downloaded ' + ProgressInfo.percent + '%';
+  log_message = log_message + ' (' + ProgressInfo.transferred + "/" + ProgressInfo.total + ')';
 
-  percent = progressObj.percent / 100
+  let percent = ProgressInfo.percent / 100
   win.setProgressBar(percent)
   sendStatusToWindow('download-progress', log_message);
 })

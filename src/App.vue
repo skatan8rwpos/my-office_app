@@ -15,8 +15,15 @@ import { ipcRenderer } from 'electron'
 
 export default {
   name: 'app',
+  mounted() {
+    ipcRenderer.on('updaterMsg', this.handleUpdater)
+  },
   methods: {
-    die: () => {alert('die')}
+    die: () => {alert('die')},
+    handleUpdater: (ev, args) => {
+      console.log('event', ev)
+      console.log('message', args)
+    }
   }
 }
 </script>
