@@ -25,7 +25,7 @@ log.info('App starting...', app.getVersion())
 //-------------------------------------------------------------------
 // Standard scheme must be registered before the app is ready
 //-------------------------------------------------------------------
-protocol.registerStandardSchemes(['myOffice'], { secure: true })
+protocol.registerStandardSchemes(['my-office'], { secure: true })
 
 //-------------------------------------------------------------------
 // Open a window that displays the version
@@ -41,20 +41,19 @@ let win
 
 function sendStatusToWindow(eventType, message) {
   log.info(eventType);
-  win.webContents.send('updaterMsg', eventType);
+  win.webContents.send('updaterMsg', eventType, message);
 }
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({ minWidth:320, width: 800, minHeight: 460, height: 600 })
 
   if (isDevelopment) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
-    createProtocol('myOffice')
-    win.webContents.openDevTools()
+    createProtocol('my-office')
     // Load the index.html when not in development
     win.loadFile('index.html')
   }

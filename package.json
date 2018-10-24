@@ -1,7 +1,6 @@
 {
   "name": "my-office",
   "version": "0.1.3-alpha",
-  "description": "A very simple electron app",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -14,10 +13,13 @@
     "release": "vue-cli-service electron:build -p always"
   },
   "dependencies": {
+    "@mdi/font": "^2.6.95",
     "electron-log": "^2.2.17",
     "electron-updater": "^3.1.2",
+    "roboto-fontface": "*",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
+    "vuetify": "^1.3.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -29,10 +31,15 @@
     "electron-devtools-installer": "^2.2.4",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
     "vue-cli-plugin-electron-builder": "^1.0.0-rc.4",
+    "vue-cli-plugin-vuetify": "^0.4.5",
     "vue-cli-plugin-vuetify-electron": "^0.0.7",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vuetify-loader": "^1.0.5"
   },
+  "description": "A very simple electron app",
   "displayName": "myOffice",
   "main": "background.js",
   "author": {

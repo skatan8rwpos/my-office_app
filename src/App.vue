@@ -1,32 +1,39 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/about">Poop</router-link> | 
-      <button @click="die">die</button>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-toolbar app>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>Vuetify</span>
+        <span class="font-weight-light">MATERIAL DESIGN</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn
+        flat
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-toolbar>
+
+    <v-content>
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import { ipcRenderer } from 'electron'
 
 export default {
-  name: 'app',
-  mounted() {
-    ipcRenderer.on('updaterMsg', this.handleUpdater)
-  },
-  methods: {
-    die: () => {alert('die')},
-    handleUpdater: (ev, args) => {
-      console.log('event', ev)
-      console.log('message', args)
+  name: 'App',
+  data () {
+    return {
+      //
     }
   }
 }
 </script>
+
 
 
 <style lang="scss">
